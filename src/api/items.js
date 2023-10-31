@@ -33,11 +33,25 @@ router.post('/', async (req,res)=>{
     const {name}=res.body;
     const query = "INSERT INTO todo_items(id, name, completed) VALUES (?, ?, ?)";
     const result = await cluster.execute(query,[id,name,false]);
-    res.status(288).send(result);
+    res.status(200).send(result);
 }) 
 
 //update methode 
+router.upadte('/', async (req,res)=>{
+    const {id} = req.params;
+    const {completed} = req.body;
+    const query = "UPDATE FROM items SET completed=?  WHERE id=?";
+    const result = await cluster.execute(query, [id,completed]);
+    res.status(200).send();
+}) 
 
 //delete methode
+router.upadte('/', async (req,res)=>{
+    const {id} = req.params;
+    const query = "DELETE FROM items WHERE id=?";
+    const result = await cluster.execute(query, [id]);
+    res.status(200).send();
+}) 
+
 
 module.exports = router;
