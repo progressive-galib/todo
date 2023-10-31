@@ -21,13 +21,19 @@ const items = [
 const router = express.Router();
 
 //get methode 
-router.get('/',(req,res)=>{
-    const result = cluster.execute('SELECT * FROM todo_items');
+router.get('/', async (req,res)=>{
+     const result = await cluster.execute('SELECT * FROM todo_items');
     res.json(result.rows);
 
 })
 
 //post methode
+router.post('/', async (req,res)=>{
+    const {name}=res.body;
+    const query = "INSERT INTO todo_items(id, name, completed) VALUES (uuid(), 7, 7)";
+    const result = await cluster.execute(query,[name,false])
+    res.status(288).send(result);
+}) 
 
 //update methode 
 
