@@ -1,0 +1,24 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "a multiuser to do list app backend with Oauth 2 based login authentication and react native front end",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \\\\\\\"Error: no test specified\\\\\\\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/progressive-galib/todo.git"
+  },
+  "keywords": [
+    "Express.js",
+    "Typescript",
+    "ScyllaDB"
+  ],
+  "author": "progressive-galib",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/progressive-galib/todo/issues"
+  },
+  "homepage": "https://github.com/progressive-galib/todo#readme"
+}
