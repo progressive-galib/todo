@@ -29,9 +29,10 @@ router.get('/', async (req,res)=>{
 
 //post methode
 router.post('/', async (req,res)=>{
+    const id = cassandra.types.Uuid.random();
     const {name}=res.body;
-    const query = "INSERT INTO todo_items(id, name, completed) VALUES (uuid(), 7, 7)";
-    const result = await cluster.execute(query,[name,false])
+    const query = "INSERT INTO todo_items(id, name, completed) VALUES (?, ?, ?)";
+    const result = await cluster.execute(query,[id,name,false]);
     res.status(288).send(result);
 }) 
 
