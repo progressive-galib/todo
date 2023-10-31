@@ -8,7 +8,7 @@ const cluster = new cassandra.Client({
     contactPoints: [NODE1, NODE2, NODE3],
     localDataCenter: LOCAL_DATA_CENTER,
     credentials: { username: USERNAME, password: PASSWORD },
-    keyspace: 'avengers',
+    keyspace: 'todo',
 });
 
 
