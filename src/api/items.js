@@ -20,10 +20,17 @@ const items = [
 
 const router = express.Router();
 
+//get methode 
 router.get('/',(req,res)=>{
     const result = cluster.execute('SELECT * FROM todo_items');
     res.json(result.rows);
 
 })
+
+//post methode
+
+//update methode 
+
+//delete methode
 
 module.exports = router;
