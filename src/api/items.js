@@ -46,7 +46,7 @@ router.upadte('/', async (req,res)=>{
 }) 
 
 //delete methode
-router.upadte('/', async (req,res)=>{
+router.delete('/', async (req,res)=>{
     const {id} = req.params;
     const query = "DELETE FROM items WHERE id=?";
     const result = await cluster.execute(query, [id]);
